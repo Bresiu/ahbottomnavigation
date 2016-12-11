@@ -12,7 +12,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorCompat;
 import android.support.v4.view.ViewPropertyAnimatorUpdateListener;
-import android.support.v4.view.animation.LinearOutSlowInInterpolator;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +25,7 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation.OnNavigationPositio
  */
 public class AHBottomNavigationBehavior<V extends View> extends VerticalScrollingBehavior<V> {
 
-	private static final Interpolator INTERPOLATOR = new LinearOutSlowInInterpolator();
+	private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
 	private static final int ANIM_DURATION = 300;
 
 	private int mTabLayoutId;

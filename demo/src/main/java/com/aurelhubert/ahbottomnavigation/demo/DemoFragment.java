@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
@@ -152,9 +153,11 @@ public class DemoFragment extends Fragment {
 		// Do what you want here, for example animate the content
 		if (fragmentContainer != null) {
 			Animation fadeIn = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
+			fadeIn.setInterpolator(new FastOutSlowInInterpolator());
 			fragmentContainer.startAnimation(fadeIn);
 		}
 	}
+
 
 	/**
 	 * Called when a fragment will be hidden
@@ -162,6 +165,7 @@ public class DemoFragment extends Fragment {
 	public void willBeHidden() {
 		if (fragmentContainer != null) {
 			Animation fadeOut = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out);
+			fadeOut.setInterpolator(new FastOutSlowInInterpolator());
 			fragmentContainer.startAnimation(fadeOut);
 		}
 	}
