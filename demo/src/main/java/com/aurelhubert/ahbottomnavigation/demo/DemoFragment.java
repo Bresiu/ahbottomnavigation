@@ -9,6 +9,7 @@ import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -152,6 +153,7 @@ public class DemoFragment extends Fragment {
 	public void willBeDisplayed() {
 		// Do what you want here, for example animate the content
 		if (fragmentContainer != null) {
+			Log.d("BRES", "willBeDisplayed");
 			Animation fadeIn = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
 			fadeIn.setInterpolator(new FastOutSlowInInterpolator());
 			fragmentContainer.startAnimation(fadeIn);
@@ -164,6 +166,7 @@ public class DemoFragment extends Fragment {
 	 */
 	public void willBeHidden() {
 		if (fragmentContainer != null) {
+			Log.d("BRES", "willBeHidden");
 			Animation fadeOut = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out);
 			fadeOut.setInterpolator(new FastOutSlowInInterpolator());
 			fragmentContainer.startAnimation(fadeOut);
